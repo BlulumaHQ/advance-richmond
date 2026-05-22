@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 function NotFoundComponent() {
   return (
@@ -72,19 +74,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Advance Richmond — Leading Richmond Forward" },
+      { name: "description", content: "Advance Richmond Community Association is a grassroots civic movement of Richmond, BC residents organizing for safer neighbourhoods, transparent local government, and a stronger community voice." },
+      { name: "author", content: "Advance Richmond Community Association" },
+      { property: "og:site_name", content: "Advance Richmond" },
+      { property: "og:title", content: "Advance Richmond — Leading Richmond Forward" },
+      { property: "og:description", content: "A grassroots civic movement organizing Richmond, BC residents for a safer, stronger, more united city." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@advancerichmond" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Advance Richmond Community Association",
+          alternateName: "ARCA",
+          url: "/",
+          areaServed: "Richmond, British Columbia, Canada",
+          sameAs: [
+            "https://www.facebook.com/advancerichmond",
+            "https://x.com/advancerichmond",
+          ],
+        }),
       },
     ],
   }),
@@ -113,7 +139,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="flex min-h-screen flex-col bg-background text-foreground">
+        <SiteHeader />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
     </QueryClientProvider>
   );
 }
