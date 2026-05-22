@@ -253,6 +253,21 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    slug: "school-renaming-policy",
+    title: "Concerns about School Re-Naming Policy",
+    excerpt:
+      "Advance Richmond raises concerns about the Richmond School District's (SD38) efforts to decolonize public education.",
+    body: [
+      "Advance Richmond has formally raised concerns about the Richmond School District's school re-naming and decolonization initiative.",
+      "Our submission calls for clearer process, genuine community consultation, and decisions that reflect the views of Richmond parents and students.",
+    ],
+    date: "2025-10-15",
+    image: sourceImages.schoolRenaming,
+    category: "Education",
+    sourceUrl:
+      "https://drive.google.com/file/d/1r9bp6Qf9hOrOKlyGSZau2UmzX6-DZKC0/view?usp=sharing",
+  },
+  {
     slug: "cowichan-land-title-dispute",
     title: "Cowichan Land Title Dispute",
     excerpt:
