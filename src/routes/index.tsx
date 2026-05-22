@@ -254,10 +254,10 @@ function ImpactSection() {
 
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/10 md:col-span-5">
           {[
-            { k: "Thousands", v: "Residents at the 2024 Family Day Rally" },
-            { k: "100+", v: "Speakers organized at public hearings" },
-            { k: "All", v: "Richmond neighbourhoods covered by outreach" },
-            { k: "EN · 中文", v: "Bilingual community materials" },
+            { k: "2024", v: "Family Day Rally — largest in city history" },
+            { k: "120+", v: "Speakers registered at the injection-site hearing" },
+            { k: "7", v: "Directors leading the association" },
+            { k: "EN · 中文", v: "Bilingual community organizing" },
           ].map((s) => (
             <div key={s.v} className="bg-[color:var(--primary)] p-6">
               <dt className="font-serif text-3xl text-[color:var(--gold-soft)]">
