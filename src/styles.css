@@ -65,6 +65,8 @@
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-crimson: var(--crimson);
+  --color-primary-deep: var(--primary-deep);
+  --color-primary-soft: var(--primary-soft);
   --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
