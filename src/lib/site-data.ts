@@ -105,60 +105,93 @@ export const socialLinks = {
 export type TeamMember = {
   name: string;
   role: string;
-  area: string;
+  area?: string;
   bio: string;
   initials: string;
+  photo?: string;
+  slug?: string;
+  socials?: { label: string; url: string }[];
   languages?: string[];
 };
 
 export const team: TeamMember[] = [
   {
-    name: "Community Chair",
-    role: "Chairperson",
-    area: "Steveston · West Richmond",
-    bio: "A long-time Richmond homeowner who helped convene the first neighbourhood meetings in 2024 after the supervised injection site hearing.",
-    initials: "CC",
-    languages: ["English"],
+    name: "Gary Law",
+    role: "Director",
+    slug: "gary-law",
+    bio: "A founding member of the Advance Richmond Community Association, Gary helped bring together Richmond residents around community safety, transparent local government, and a stronger civic voice.",
+    initials: "GL",
   },
   {
-    name: "Outreach Lead",
-    role: "Director of Community Outreach",
-    area: "City Centre · Brighouse",
-    bio: "Parent of two who organizes door-to-door information visits and bilingual town halls across Richmond neighbourhoods.",
-    initials: "OL",
-    languages: ["English", "繁體中文"],
+    name: "Kevin Lai 賴彥宏",
+    role: "Founder & Director",
+    slug: "kevin-lai",
+    photo: sourceImages.kevinLai,
+    bio: "Founder of the Advance Richmond Community Association and president of the Richmond Centre Conservative EDA. A business owner and general contractor of 10+ years, Kevin helped unite Richmond's Chinese communities in the largest resident-led rally in the city's history.",
+    initials: "KL",
+    languages: ["English", "粵語", "普通话"],
   },
   {
-    name: "Policy Lead",
-    role: "Director of Policy",
-    area: "Broadmoor",
-    bio: "Tracks Council motions, public hearings, and zoning files so residents always have the facts before they speak.",
-    initials: "PL",
-    languages: ["English"],
+    name: "Sam Wang 王晟",
+    role: "Director",
+    slug: "sam-wang",
+    photo: sourceImages.samWang,
+    bio: "A 30-year Richmond resident and Chartered Professional Accountant, Sam brings decades of experience as a senior financial executive and audit committee chair. He serves on the board of the Richmond Centre for Disability.",
+    initials: "SW",
+    socials: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/samwangcpa/" },
+      { label: "X", url: "https://x.com/SamWangRichmond" },
+      { label: "Instagram", url: "https://www.instagram.com/sam.wang.cpa/" },
+    ],
   },
   {
-    name: "Family Advocate",
-    role: "Family & Youth Liaison",
-    area: "Seafair",
-    bio: "Coordinates parent meet-ups and school-community dialogues, including the 2024 Family Day Rally.",
-    initials: "FA",
-    languages: ["English", "粵語"],
+    name: "Sophia Woo 胡慧儀",
+    role: "Director",
+    slug: "sophia-woo",
+    photo: sourceImages.sophiaWoo,
+    bio: "Mental health clinician, former Vancouver School Board Trustee (2011–2014), and Paul Harris Fellow. Sophia brings 30 years of public-service experience in health, education, and community organizations.",
+    initials: "SoW",
+    socials: [
+      { label: "X", url: "https://x.com/woo_sophia" },
+      { label: "Instagram", url: "https://www.instagram.com/woosophia2026/" },
+    ],
   },
   {
-    name: "Small Business Liaison",
-    role: "Director, Local Economy",
-    area: "No. 3 Road · Aberdeen",
-    bio: "Connects ARCA with merchants and restaurateurs working to keep Richmond's shopping districts safe and prosperous.",
-    initials: "SB",
-    languages: ["English", "繁體中文", "普通话"],
+    name: "Phyllis Tang 鄧明惠",
+    role: "Director",
+    slug: "phyllis-tang",
+    photo: sourceImages.phyllisTang,
+    bio: "Music educator of 24+ years, Community Outreach & PR Specialist, and 2018 Vancouver City Council Candidate. Phyllis is Treasurer of the Rotaract Club of Richmond and a Director of the Advance Richmond Community Association.",
+    initials: "PT",
+    languages: ["English", "普通话", "粵語"],
+    socials: [
+      { label: "X", url: "https://x.com/Phyllis_MH_Tang" },
+      { label: "Instagram", url: "https://www.instagram.com/phyllis.tang.cares/" },
+    ],
   },
   {
-    name: "Volunteer Coordinator",
-    role: "Volunteer Coordinator",
-    area: "Hamilton · East Richmond",
-    bio: "Welcomes new volunteers and matches them with canvassing, event support, and translation teams.",
-    initials: "VC",
-    languages: ["English"],
+    name: "Dean Billings",
+    role: "Director",
+    slug: "dean-billings",
+    photo: sourceImages.deanBillings,
+    bio: "Secretary of the Richmond District Parents Association (District PAC), coach and board member with the Richmond Lacrosse Association, and software project manager with 16+ years in public-sector digital transformation.",
+    initials: "DB",
+    socials: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/deanbillings/" },
+      { label: "Instagram", url: "https://www.instagram.com/deanbillingscan/" },
+      { label: "X", url: "https://x.com/deanbillingscan" },
+    ],
+  },
+  {
+    name: "Danny Chang 張博浩",
+    role: "Director",
+    slug: "danny-chang",
+    photo: sourceImages.dannyChang,
+    bio: "Richmond business director and SFU Business graduate, Danny has volunteered in federal and provincial election campaigns. As a parent in the Richmond School District, he champions safe, welcoming schools for every student.",
+    initials: "DC",
+    socials: [
+      { label: "Instagram", url: "https://www.instagram.com/dannychang0602/" },
+    ],
   },
 ];
 
