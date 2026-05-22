@@ -79,10 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Advance Richmond Community Association" },
       { property: "og:site_name", content: "Advance Richmond" },
       { property: "og:title", content: "Advance Richmond — Leading Richmond Forward" },
-      { property: "og:description", content: "A grassroots civic movement organizing Richmond, BC residents for a safer, stronger, more united city." },
+      { property: "og:description", content: "Advance Richmond Community Association is a grassroots civic movement of Richmond, BC residents organizing for safer neighbourhoods, transparent local government, and a stronger community voice." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@advancerichmond" },
+      { name: "twitter:title", content: "Advance Richmond — Leading Richmond Forward" },
+      { name: "twitter:description", content: "Advance Richmond Community Association is a grassroots civic movement of Richmond, BC residents organizing for safer neighbourhoods, transparent local government, and a stronger community voice." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/48f1b2ae-a6f6-47b8-9c93-3c9048f9502e/id-preview-04efeb76--776fc073-bbbe-4073-988b-951e104b50f8.lovable.app-1779413811363.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/48f1b2ae-a6f6-47b8-9c93-3c9048f9502e/id-preview-04efeb76--776fc073-bbbe-4073-988b-951e104b50f8.lovable.app-1779413811363.png" },
     ],
     links: [
       {
