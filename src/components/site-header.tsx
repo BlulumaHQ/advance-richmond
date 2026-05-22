@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import heron from "@/assets/heron-mark.png";
+import heron from "@/assets/arca-bird.png";
 import { navLinks, socialLinks } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -48,10 +48,10 @@ export function SiteHeader() {
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img
             src={heron}
-            alt=""
-            width={36}
-            height={36}
-            className="h-9 w-9 object-contain"
+            alt="ARCA heron mark"
+            width={44}
+            height={44}
+            className="h-10 w-10 object-contain md:h-11 md:w-11"
           />
           <div className="leading-tight">
             <div className="font-serif text-xl text-[color:var(--ink)] md:text-2xl">

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import heron from "@/assets/heron-mark.png";
+import arcaLogo from "@/assets/arca-logo-full.jpeg";
 import { navLinks, socialLinks } from "@/lib/site-data";
 
 export function SiteFooter() {
@@ -7,20 +7,12 @@ export function SiteFooter() {
     <footer className="border-t border-[color:var(--border)] bg-[color:var(--primary)] text-[color:var(--primary-foreground)]">
       <div className="container-wide grid gap-12 py-14 md:grid-cols-12">
         <div className="md:col-span-5">
-          <div className="flex items-center gap-3">
+          <div className="inline-flex items-center rounded-lg bg-white px-4 py-3">
             <img
-              src={heron}
-              alt=""
-              width={40}
-              height={40}
-              className="h-10 w-10 brightness-0 invert"
+              src={arcaLogo}
+              alt="ARCA — Advance Richmond Community Association"
+              className="h-16 w-auto object-contain md:h-20"
             />
-            <div>
-              <div className="font-serif text-2xl">Advance Richmond</div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.18em] opacity-70">
-                Community Association
-              </div>
-            </div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-relaxed opacity-80">
             A grassroots civic movement of Richmond, BC residents organizing for
