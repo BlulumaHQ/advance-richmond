@@ -68,13 +68,6 @@ export const legacyImageAliases = {
   galleryPark: sourceImages.communityLinks,
 };
 Object.assign(images, legacyImageAliases);
-const heroCommunity = legacyImageAliases.heroCommunity;
-const galleryPark = legacyImageAliases.galleryPark;
-const eventTownhall = legacyImageAliases.eventTownhall;
-const eventCanvass = legacyImageAliases.eventCanvass;
-const eventRally = legacyImageAliases.eventRally;
-const eventFestival = legacyImageAliases.eventFestival;
-const eventVigil = legacyImageAliases.eventVigil;
 
 export const navLinks = [
   { to: "/", label: "Home" },
@@ -349,7 +342,7 @@ export const featuredEvents: FeaturedEvent[] = [
     location: "Across Richmond neighbourhoods",
     blurb:
       "Small, bilingual gatherings where residents bring concerns directly to ARCA organizers and elected officials.",
-    image: eventTownhall,
+    image: legacyImageAliases.eventTownhall,
     tag: "Town Halls",
   },
   {
@@ -358,7 +351,7 @@ export const featuredEvents: FeaturedEvent[] = [
     location: "Steveston · City Centre · Broadmoor",
     blurb:
       "Volunteers walking blocks to share clear, fact-based information on issues that affect Richmond families.",
-    image: eventCanvass,
+    image: legacyImageAliases.eventCanvass,
     tag: "Outreach",
   },
   {
@@ -367,7 +360,7 @@ export const featuredEvents: FeaturedEvent[] = [
     location: "Richmond City Hall",
     blurb:
       "An annual peaceful gathering of families calling for safer streets and genuine consultation.",
-    image: eventRally,
+    image: legacyImageAliases.eventRally,
     tag: "Rally",
   },
   {
@@ -376,7 +369,7 @@ export const featuredEvents: FeaturedEvent[] = [
     location: "Steveston Village · Aberdeen Centre",
     blurb:
       "Look for our table at Richmond festivals — bilingual materials, friendly conversation, and ways to get involved.",
-    image: eventFestival,
+    image: legacyImageAliases.eventFestival,
     tag: "Festivals",
   },
   {
@@ -385,7 +378,7 @@ export const featuredEvents: FeaturedEvent[] = [
     location: "Richmond civic spaces",
     blurb:
       "Quiet, respectful vigils that bring residents together in moments that call for solidarity.",
-    image: eventVigil,
+    image: legacyImageAliases.eventVigil,
     tag: "Vigils",
   },
 ];
