@@ -53,7 +53,7 @@ export const sourceImages = {
   ),
 };
 
-export const images = sourceImages;
+export const images: Record<string, string> = { ...sourceImages };
 
 // Back-compat aliases used by older routes; all point to real source photos.
 export const legacyImageAliases = {
@@ -67,7 +67,7 @@ export const legacyImageAliases = {
   galleryFamily: sourceImages.familyDayRally,
   galleryPark: sourceImages.communityLinks,
 };
-Object.assign(images as Record<string, string>, legacyImageAliases);
+Object.assign(images, legacyImageAliases);
 const heroCommunity = legacyImageAliases.heroCommunity;
 const galleryPark = legacyImageAliases.galleryPark;
 const eventTownhall = legacyImageAliases.eventTownhall;
