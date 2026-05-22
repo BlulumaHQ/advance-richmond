@@ -263,7 +263,7 @@ export const news: NewsItem[] = [
       "Protecting local property rights — and making sure no resident has to navigate a complex provincial issue alone — is exactly the kind of long-term community work ARCA was built for.",
     ],
     date: "2025-09-12",
-    image: heroCommunity,
+    image: sourceImages.cowichan,
     category: "Advocacy",
     sourceUrl:
       "https://www.advancerichmond.ca/latest-news-and-events/cowichan-land-title-dispute",
@@ -279,7 +279,7 @@ export const news: NewsItem[] = [
       "If you'd like to host a small gathering on your street, or help us translate materials, please get in touch.",
     ],
     date: "2025-07-04",
-    image: galleryPark,
+    image: sourceImages.communityLinks,
     category: "Community",
     sourceUrl:
       "https://www.advancerichmond.ca/latest-news-and-events/community-links",
@@ -295,7 +295,7 @@ export const news: NewsItem[] = [
       "Through public hearings, written submissions, and community education sessions, ARCA continues to call for a better path forward.",
     ],
     date: "2025-05-22",
-    image: eventTownhall,
+    image: sourceImages.stopCph,
     category: "Policy",
     sourceUrl:
       "https://www.advancerichmond.ca/latest-news-and-events/stop-cph",
@@ -311,7 +311,7 @@ export const news: NewsItem[] = [
       "The energy of that day became the foundation for the Advance Richmond Community Association.",
     ],
     date: "2024-02-19",
-    image: eventRally,
+    image: sourceImages.familyDayRally,
     category: "Events",
     sourceUrl:
       "https://www.advancerichmond.ca/latest-news-and-events/2024-family-day-rally",
