@@ -55,6 +55,27 @@ export const sourceImages = {
 
 export const images = sourceImages;
 
+// Back-compat aliases used by older routes; all point to real source photos.
+export const legacyImageAliases = {
+  heroCommunity: sourceImages.aboutHero,
+  richmondAerial: sourceImages.familyDayRally,
+  eventTownhall: sourceImages.stopCph,
+  eventCanvass: sourceImages.cowichan,
+  eventRally: sourceImages.familyDayRally,
+  eventFestival: sourceImages.communityLinks,
+  eventVigil: sourceImages.schoolRenaming,
+  galleryFamily: sourceImages.familyDayRally,
+  galleryPark: sourceImages.communityLinks,
+};
+Object.assign(images as Record<string, string>, legacyImageAliases);
+const heroCommunity = legacyImageAliases.heroCommunity;
+const galleryPark = legacyImageAliases.galleryPark;
+const eventTownhall = legacyImageAliases.eventTownhall;
+const eventCanvass = legacyImageAliases.eventCanvass;
+const eventRally = legacyImageAliases.eventRally;
+const eventFestival = legacyImageAliases.eventFestival;
+const eventVigil = legacyImageAliases.eventVigil;
+
 export const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About ARCA" },
