@@ -1,32 +1,65 @@
-import heroCommunity from "@/assets/hero-community.jpg";
-import richmondAerial from "@/assets/richmond-aerial.jpg";
-import eventTownhall from "@/assets/event-townhall.jpg";
-import eventCanvass from "@/assets/event-canvass.jpg";
-import eventRally from "@/assets/event-rally.jpg";
-import eventFestival from "@/assets/event-festival.jpg";
-import eventVigil from "@/assets/event-vigil.jpg";
-import galleryFamily from "@/assets/gallery-family.jpg";
-import galleryPark from "@/assets/gallery-park.jpg";
+/**
+ * All content below is sourced from https://www.advancerichmond.ca/.
+ * Images are served from Google Sites' CDN (lh3.googleusercontent.com),
+ * the same host the source site uses.
+ */
 
-export const images = {
-  heroCommunity,
-  richmondAerial,
-  eventTownhall,
-  eventCanvass,
-  eventRally,
-  eventFestival,
-  eventVigil,
-  galleryFamily,
-  galleryPark,
+// Real images from the source site (Google Sites CDN). These are stable URLs
+// also referenced from advancerichmond.ca itself.
+const G = (id: string) => `https://lh3.googleusercontent.com/sitesv/${id}=w1600`;
+
+export const sourceImages = {
+  // homepage news cards
+  cowichan: G(
+    "AA5AbUAqW8t-CjOUV1rQiNWbv8YT_oul8i0MNCHPfxnlcozjhR58pq-0cP4fZ6opEppgT3BwXZHACh-t-kUH_6V2k_k_Bjd92q26moime2OPOD3_lmUrKhPyc8WmIyyhALRVdLRPhp8fcU5XXq6_uc6t8mLDdVvNQ7BoH5YX258DionLB2OzpOieZYhERbZvi-mj2tbvKuJ6dcu3VNiNxEu2-5674_c7oeugcy8SC_k",
+  ),
+  communityLinks: G(
+    "AA5AbUBPV6gv8FfgX3fG7h6als04rzr-1yS5K-mDsrimkKBKS2nYUK72kZOMb7bPtRIrllw-SuW2ua_OlSXJve9iS2kmpsC2Rh88PpnRdLAeqNGq0kJ-H2ozLgMSvSyJaOnHoGJ56WGInSaWhlmEPgGX3GUV65r1Bb3-3EaIa1M35Uh4GnQMJrmBbdupcsutNoMSW-Sw5jgMxuGBJtn-6zEOvjibe6Mk4iWLlHKk",
+  ),
+  stopCph: G(
+    "AA5AbUDn4qIRQ6Akj7vqE-A94cTmGzDLzNOuBNuBD7aDts4lr7OX-oTAOMARWO0DQCV09Q2S9mFroqIMk9EX9WWkwQhGQdZWxcazdYRYw-Y7csLMPpAcoLpVqPZnTng0fFxP7xYO-LUTXn_mNPKPgOg9c6-w7SgsYXOwveDym4A4PnQ9s2dt5KV4M5DIUKCIF2ysqb19VuhxR8XZlUgg_rDIVAFpLGM_QQMJt4PKvDM",
+  ),
+  familyDayRally: G(
+    "AA5AbUBs-9Om8kxdyC4HdjstCBpNkO2MfPo4Yc71uFCA_5AUeUTRJ4B4l7rEOS2JwUkewz0G1anfN4XFjOqFqThDyasjOzvJGzfuKB7_p2XHhY6iz0NjSSn73wImcVHkUQ1G0cUONS6KHGgnX9sMNPTb2zxJ2onIn0zvSyl07i5n55Ghpwv40IhtE-99-rGLFph3DgHkow0d7p-R5WbJqL1dd7vLhpqE2yCFcXq3",
+  ),
+  // section heroes
+  aboutHero: G(
+    "AA5AbUC80xYDP5jnPCjtP0jTLSeuYLYYWvhtRWutruX7GC5rSkMLEUuTKMFsOwZKmA8oj0-At35h8v3EYjGx8kTBcqosRn8D_a0YRerX_87CCjW4_0pPzK1DMerqPi2VTWs567SOMb-gT46ipe1QmMXjf3F7T9yY-d3pSMUV0E1SBiwTQuPBdp9wzOohMkRXHfQ8L-GQhIJOqA2O9R029I_ZTxrJNvpXTrRzAd_n",
+  ),
+  newsHero: G(
+    "AA5AbUB7tsy31nqZ1UYrzYZ-S9mxz5gkovTc-24EPuy5ObydJK1VTuEu2aGm6d9UT9JTG9qw-tQkBt_rEMjVC8siIy89g4J0OrqH2cmj2bBi5Y9Q8RT9L0zAZvxjuKwPQ-gNy7yvZkJAQWNLO07gyY8pW6HLkIHCK1A5pSi4mawleRWk1UV0YCF1G5YZDa3rouIZq7Cle2-3QGiQalr_wPt-9yH2fUB_Rx0bXb0Q",
+  ),
+  schoolRenaming: G(
+    "AA5AbUBe0W3LabJbF06M5psDD0lLtiDYsu48pM1QdBqWMIh40jvxtiPGXEZHvK20AiHGuHMr6NAYHjyllheo_n_DQbgYYpnxp4t8G8mIDMOghd7Qm3D04nmlHHN5yKBHI_xLZQAgKzOhN2DrJcum2Nk6qg3fM0Pnos-LFEpYynJd8QsRDfxQvg2Np8taXrbtu8h6oRf0lR7SjcIz1nEhp4lJ4oTffWAUOyk33Nxf",
+  ),
+  // team portraits
+  kevinLai: G(
+    "AA5AbUAWg1C8xbmhLC4sUT-HIas5lCih4C2caaydCiw5sX1jzhXzGkNKj5_UIdN4ZVBWUajGBDEiAAWVgZd9CiCwYKyCydU0WTg8aD8F_LYTpQ0vr9yAuac49E8mxnCKbCMZxMAx6o5Q6EVbCvG5aoYvjBwS3YNzcPeovPJH4ahue-7nUeol924shuEvATqlmapJzqTFt4-ZmFkr_KsFXrovbdl3uZ1M0EmHkNISofM",
+  ),
+  samWang: G(
+    "AA5AbUBTnsDonxRDNP4gLRPXBYyhs5FUkY5DyOT0W1d14wyzn0kWmK6p3KfLo2ns--BT9d0qF-YhZ0COYCJOCt97_xzlAxvWMpKT_TUpxhFdxpnpWxYV_WVVqpiEaKcmFSfzmxxRgnN0QkIRyyxo4q8sEveh0MFiNQtLgrFcGf_pFwUp75Pz8QwrAZZyI1c91qsSclSd8Vvl9VPtxSSCVxnNb-KbN3u0hnhctPc35yo",
+  ),
+  sophiaWoo: G(
+    "AA5AbUBAK9XLDSbcAKURvTSyoaYuZcrTcem6KEHszgRpLIeAunnnVv1BuO3-78HWU_X0t2faVRwfs0NVjzrSoWJfNVjBI2q-uAsMasZRk1Qq9iuWcKku_6pM8mlbPaml3dgwIXGEzT3AAEQ364-pyCs_SMBLHep9efJtZrtmm2aj80hkDARrFlWTAOGzkFX9pGBCn8ERM-Qt5SSw7JF6xmMDfL7vcVspNksd_eFK9ro",
+  ),
+  phyllisTang: G(
+    "AA5AbUCUhGVAfwmNd2n62cj92ttY8W8s2EZU23eP1Es2W93q2EPfbBzLkHfQ_M-S1PKaQ6h9SREJ5xhhOPtLIJ-M--dABxNnbIhh05XXLk8ADNayf9GeP7il14YGrfmFUKtqne3ap0csF5-_ccIq_v295h0g5tHyQcgWpbgjx6qCm1tSbAnqVCtYjwsVDmP8KCJB0opIHud70e0j-efLKwAPDPnZU9jeJKQe8RxeLJk",
+  ),
+  deanBillings: G(
+    "AA5AbUBQGa2ijzigvTxnlxPVk05gHMufpFlU2ny6Ss9VwMMl1Fp06i-8VgeydrD11yOmfC9zwBQFubAv_9YuglnldHM_LeQ3H9zNmdV5FLroU-SPzY7l7Jq1Vjw5xLlOTMVIzcSqyrTx-JLmfRypdf5F_vb_LH_eINMrFjNoCinflG3BXHY2skhPg4sWpxKIZYYxOlMcLZqXiAAtGkapNTYni5IuxO8841gV-BcSVd0",
+  ),
+  dannyChang: G(
+    "AA5AbUD6poNcq9T-1IdaXwwqWMZXf4LwVVGqdDGFOv7af14xoEfYVaP4NPmNkYbqVTS4ZLmUW_snIijmX3XZnq7FgCfQXlmWP22dxf8qkexxTP5NbcFHG7QDo5QMqn17BmVjeLGKdCQGYhrxjTlDLJ9m_DdUS5XI2L7pL0tm_ba7GTg46sT1K7ZDYMDO44C2uLnW9CPByccJ3A0gQ6Q0ncjIBL2znDpHcNukU7iN1ps",
+  ),
 };
+
+export const images = sourceImages;
 
 export const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  { to: "/about", label: "About ARCA" },
   { to: "/team", label: "Our Team" },
-  { to: "/priorities", label: "Priorities" },
-  { to: "/events", label: "Events" },
-  { to: "/news", label: "News" },
+  { to: "/news", label: "News & Events" },
   { to: "/get-involved", label: "Get Involved" },
 ] as const;
 
@@ -35,6 +68,13 @@ export const socialLinks = {
   twitter: "https://x.com/advancerichmond",
   joinList:
     "https://docs.google.com/forms/d/e/1FAIpQLSflYN9o-pdKQnOFk7d6_SXg5V8_Fxuu3O03iMwU4c4extQeqA/viewform",
+  membership:
+    "https://docs.google.com/forms/d/e/1FAIpQLSc85jJmmTl39iSVd-WcRsVn2_ckyZG9sfVxae2znlMsu_ensw/viewform",
+  drugSurvey: "https://forms.gle/Ks8CTyjPkDsjdk7w8",
+  youthSurvey:
+    "https://docs.google.com/forms/d/e/1FAIpQLScyR-HVCatVeZCo8iXrxzsvV4ose2Ipasu4rdfkNBEU0aJx8w/viewform?usp=header",
+  donateCouncilEmail: "fund@advancerichmond.ca",
+  donateTrusteeEmail: "sd38@advancerichmond.ca",
 };
 
 /** Leadership / community representatives. Names below reflect the kind of
