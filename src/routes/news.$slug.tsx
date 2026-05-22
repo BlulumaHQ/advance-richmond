@@ -101,7 +101,7 @@ function ArticlePage() {
           />
         </div>
         <article className="container-prose mt-12 max-w-3xl space-y-5 text-lg leading-relaxed text-[color:var(--ink-soft)]">
-          {item.body.map((p, i) => (
+          {item.body.map((p: string, i: number) => (
             <p key={i}>{p}</p>
           ))}
           <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-[color:var(--border)] pt-6 text-sm">
