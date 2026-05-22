@@ -4,6 +4,13 @@
  * the same host the source site uses.
  */
 
+import teamKevinLai from "@/assets/team-kevin-lai.jpeg";
+import teamSamWang from "@/assets/team-sam-wang.jpeg";
+import teamSophiaWoo from "@/assets/team-sophia-woo.jpeg";
+import teamPhyllisTang from "@/assets/team-phyllis-tang.jpeg";
+import teamDeanBillings from "@/assets/team-dean-billings.jpeg";
+import teamDannyChang from "@/assets/team-danny-chang.jpeg";
+
 // Real images from the source site (Google Sites CDN). These are stable URLs
 // also referenced from advancerichmond.ca itself.
 const G = (id: string) => `https://lh3.googleusercontent.com/sitesv/${id}=w1600`;
@@ -32,25 +39,13 @@ export const sourceImages = {
   schoolRenaming: G(
     "AA5AbUBe0W3LabJbF06M5psDD0lLtiDYsu48pM1QdBqWMIh40jvxtiPGXEZHvK20AiHGuHMr6NAYHjyllheo_n_DQbgYYpnxp4t8G8mIDMOghd7Qm3D04nmlHHN5yKBHI_xLZQAgKzOhN2DrJcum2Nk6qg3fM0Pnos-LFEpYynJd8QsRDfxQvg2Np8taXrbtu8h6oRf0lR7SjcIz1nEhp4lJ4oTffWAUOyk33Nxf",
   ),
-  // team portraits
-  kevinLai: G(
-    "AA5AbUAWg1C8xbmhLC4sUT-HIas5lCih4C2caaydCiw5sX1jzhXzGkNKj5_UIdN4ZVBWUajGBDEiAAWVgZd9CiCwYKyCydU0WTg8aD8F_LYTpQ0vr9yAuac49E8mxnCKbCMZxMAx6o5Q6EVbCvG5aoYvjBwS3YNzcPeovPJH4ahue-7nUeol924shuEvATqlmapJzqTFt4-ZmFkr_KsFXrovbdl3uZ1M0EmHkNISofM",
-  ),
-  samWang: G(
-    "AA5AbUBTnsDonxRDNP4gLRPXBYyhs5FUkY5DyOT0W1d14wyzn0kWmK6p3KfLo2ns--BT9d0qF-YhZ0COYCJOCt97_xzlAxvWMpKT_TUpxhFdxpnpWxYV_WVVqpiEaKcmFSfzmxxRgnN0QkIRyyxo4q8sEveh0MFiNQtLgrFcGf_pFwUp75Pz8QwrAZZyI1c91qsSclSd8Vvl9VPtxSSCVxnNb-KbN3u0hnhctPc35yo",
-  ),
-  sophiaWoo: G(
-    "AA5AbUBAK9XLDSbcAKURvTSyoaYuZcrTcem6KEHszgRpLIeAunnnVv1BuO3-78HWU_X0t2faVRwfs0NVjzrSoWJfNVjBI2q-uAsMasZRk1Qq9iuWcKku_6pM8mlbPaml3dgwIXGEzT3AAEQ364-pyCs_SMBLHep9efJtZrtmm2aj80hkDARrFlWTAOGzkFX9pGBCn8ERM-Qt5SSw7JF6xmMDfL7vcVspNksd_eFK9ro",
-  ),
-  phyllisTang: G(
-    "AA5AbUCUhGVAfwmNd2n62cj92ttY8W8s2EZU23eP1Es2W93q2EPfbBzLkHfQ_M-S1PKaQ6h9SREJ5xhhOPtLIJ-M--dABxNnbIhh05XXLk8ADNayf9GeP7il14YGrfmFUKtqne3ap0csF5-_ccIq_v295h0g5tHyQcgWpbgjx6qCm1tSbAnqVCtYjwsVDmP8KCJB0opIHud70e0j-efLKwAPDPnZU9jeJKQe8RxeLJk",
-  ),
-  deanBillings: G(
-    "AA5AbUBQGa2ijzigvTxnlxPVk05gHMufpFlU2ny6Ss9VwMMl1Fp06i-8VgeydrD11yOmfC9zwBQFubAv_9YuglnldHM_LeQ3H9zNmdV5FLroU-SPzY7l7Jq1Vjw5xLlOTMVIzcSqyrTx-JLmfRypdf5F_vb_LH_eINMrFjNoCinflG3BXHY2skhPg4sWpxKIZYYxOlMcLZqXiAAtGkapNTYni5IuxO8841gV-BcSVd0",
-  ),
-  dannyChang: G(
-    "AA5AbUD6poNcq9T-1IdaXwwqWMZXf4LwVVGqdDGFOv7af14xoEfYVaP4NPmNkYbqVTS4ZLmUW_snIijmX3XZnq7FgCfQXlmWP22dxf8qkexxTP5NbcFHG7QDo5QMqn17BmVjeLGKdCQGYhrxjTlDLJ9m_DdUS5XI2L7pL0tm_ba7GTg46sT1K7ZDYMDO44C2uLnW9CPByccJ3A0gQ6Q0ncjIBL2znDpHcNukU7iN1ps",
-  ),
+  // team portraits — uploaded high-resolution headshots
+  kevinLai: teamKevinLai,
+  samWang: teamSamWang,
+  sophiaWoo: teamSophiaWoo,
+  phyllisTang: teamPhyllisTang,
+  deanBillings: teamDeanBillings,
+  dannyChang: teamDannyChang,
 };
 
 export const images: Record<string, string> = { ...sourceImages };
