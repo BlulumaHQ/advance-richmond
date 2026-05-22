@@ -34,7 +34,12 @@ export function SiteHeader() {
             >
               X / Twitter
             </a>
-            <span className="opacity-70">繁體中文 (coming soon)</span>
+            <a
+              href="mailto:fund@advancerichmond.ca"
+              className="opacity-80 transition hover:opacity-100"
+            >
+              fund@advancerichmond.ca
+            </a>
           </div>
         </div>
       </div>
