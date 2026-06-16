@@ -85,8 +85,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@advancerichmond" },
       { name: "twitter:title", content: "Advance Richmond — Leading Richmond Forward" },
       { name: "twitter:description", content: "Advance Richmond Community Association is a grassroots civic movement of Richmond, BC residents organizing for safer neighbourhoods, transparent local government, and a stronger community voice." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/48f1b2ae-a6f6-47b8-9c93-3c9048f9502e/id-preview-04efeb76--776fc073-bbbe-4073-988b-951e104b50f8.lovable.app-1779413811363.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/48f1b2ae-a6f6-47b8-9c93-3c9048f9502e/id-preview-04efeb76--776fc073-bbbe-4073-988b-951e104b50f8.lovable.app-1779413811363.png" },
+      { property: "og:image", content: "/social-og.png" },
+      { name: "twitter:image", content: "/social-og.png" },
     ],
     links: [
       {
@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap",
       },
     ],
     scripts: [
