@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as CityCouncilTeamRouteImport } from './routes/city-council-team'
 import { Route as AboutArcaRouteImport } from './routes/about-arca'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CityCouncilTeamRoute = CityCouncilTeamRouteImport.update({
+  id: '/city-council-team',
+  path: '/city-council-team',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutArcaRoute = AboutArcaRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-arca': typeof AboutArcaRoute
+  '/city-council-team': typeof CityCouncilTeamRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-arca': typeof AboutArcaRoute
+  '/city-council-team': typeof CityCouncilTeamRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-arca': typeof AboutArcaRoute
+  '/city-council-team': typeof CityCouncilTeamRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-arca' | '/sitemap.xml'
+  fullPaths: '/' | '/about-arca' | '/city-council-team' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-arca' | '/sitemap.xml'
-  id: '__root__' | '/' | '/about-arca' | '/sitemap.xml'
+  to: '/' | '/about-arca' | '/city-council-team' | '/sitemap.xml'
+  id: '__root__' | '/' | '/about-arca' | '/city-council-team' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutArcaRoute: typeof AboutArcaRoute
+  CityCouncilTeamRoute: typeof CityCouncilTeamRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/city-council-team': {
+      id: '/city-council-team'
+      path: '/city-council-team'
+      fullPath: '/city-council-team'
+      preLoaderRoute: typeof CityCouncilTeamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about-arca': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutArcaRoute: AboutArcaRoute,
+  CityCouncilTeamRoute: CityCouncilTeamRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
