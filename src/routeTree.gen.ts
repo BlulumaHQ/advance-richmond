@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as LatestNewsAndEventsRouteImport } from './routes/latest-news-and-events'
 import { Route as EducationTeamRouteImport } from './routes/education-team'
 import { Route as CityCouncilTeamRouteImport } from './routes/city-council-team'
 import { Route as AboutArcaRouteImport } from './routes/about-arca'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LatestNewsAndEventsRoute = LatestNewsAndEventsRouteImport.update({
+  id: '/latest-news-and-events',
+  path: '/latest-news-and-events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EducationTeamRoute = EducationTeamRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
+  '/latest-news-and-events': typeof LatestNewsAndEventsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
+  '/latest-news-and-events': typeof LatestNewsAndEventsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
+  '/latest-news-and-events': typeof LatestNewsAndEventsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
     | '/about-arca'
     | '/city-council-team'
     | '/education-team'
+    | '/latest-news-and-events'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
     | '/about-arca'
     | '/city-council-team'
     | '/education-team'
+    | '/latest-news-and-events'
     | '/sitemap.xml'
   id:
     | '__root__'
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '/about-arca'
     | '/city-council-team'
     | '/education-team'
+    | '/latest-news-and-events'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
@@ -92,6 +104,7 @@ export interface RootRouteChildren {
   AboutArcaRoute: typeof AboutArcaRoute
   CityCouncilTeamRoute: typeof CityCouncilTeamRoute
   EducationTeamRoute: typeof EducationTeamRoute
+  LatestNewsAndEventsRoute: typeof LatestNewsAndEventsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -102,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/latest-news-and-events': {
+      id: '/latest-news-and-events'
+      path: '/latest-news-and-events'
+      fullPath: '/latest-news-and-events'
+      preLoaderRoute: typeof LatestNewsAndEventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/education-team': {
@@ -140,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutArcaRoute: AboutArcaRoute,
   CityCouncilTeamRoute: CityCouncilTeamRoute,
   EducationTeamRoute: EducationTeamRoute,
+  LatestNewsAndEventsRoute: LatestNewsAndEventsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
