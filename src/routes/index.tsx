@@ -85,7 +85,7 @@ function Hero() {
               <ArrowRight className="h-4 w-4" />
             </a>
             <Link
-              to="/priorities"
+              to="/about-arca"
               className="inline-flex items-center gap-2 rounded-full border border-[color:var(--ink)]/15 bg-white px-6 py-3 text-sm font-semibold text-[color:var(--ink)] transition hover:border-[color:var(--ink)]/40"
             >
               See our Priorities
@@ -167,7 +167,7 @@ function TeamSection() {
             </p>
           </div>
           <Link
-            to="/team"
+            to="/city-council-team"
             className="link-underline text-sm"
           >
             Meet the full team
@@ -286,7 +286,7 @@ function EventsSection() {
               Active in Richmond — every week
             </h2>
           </div>
-          <Link to="/events" className="link-underline text-sm">
+          <Link to="/latest-news-and-events" className="link-underline text-sm">
             All events
             <ArrowRight className="h-4 w-4" />
           </Link>
@@ -403,7 +403,7 @@ function NewsSection() {
               What we're working on right now
             </h2>
           </div>
-          <Link to="/news" className="link-underline text-sm">
+          <Link to="/latest-news-and-events" className="link-underline text-sm">
             All news
             <ArrowRight className="h-4 w-4" />
           </Link>
@@ -413,7 +413,7 @@ function NewsSection() {
           {news.map((n) => (
             <Link
               key={n.slug}
-              to="/news/$slug"
+              to="/latest-news-and-events/$slug"
               params={{ slug: n.slug }}
               className="group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white transition hover:-translate-y-1 hover:shadow-lg"
             >
