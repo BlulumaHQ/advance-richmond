@@ -4,10 +4,10 @@ import { navLinks, socialLinks } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[color:var(--border)] bg-[color:var(--primary)] text-[color:var(--primary-foreground)]">
+    <footer className="border-t border-[color:var(--border)] bg-[#128DDB] text-white">
       <div className="container-wide grid gap-12 py-14 md:grid-cols-12">
         <div className="md:col-span-5">
-          <div className="inline-flex items-center rounded-lg bg-white px-4 py-3">
+          <div className="inline-flex items-center rounded-lg bg-[#F5EFE0] px-4 py-3">
             <img
               src={arcaLogo}
               alt="ARCA — Advance Richmond Community Association"
