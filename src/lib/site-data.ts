@@ -10,35 +10,25 @@ import teamSophiaWoo from "@/assets/team-sophia-woo.jpeg";
 import teamPhyllisTang from "@/assets/team-phyllis-tang.jpeg";
 import teamDeanBillings from "@/assets/team-dean-billings.jpeg";
 import teamDannyChang from "@/assets/team-danny-chang.jpeg";
-
-// Real images from the source site (Google Sites CDN). These are stable URLs
-// also referenced from advancerichmond.ca itself.
-const G = (id: string) => `https://lh3.googleusercontent.com/sitesv/${id}=w1600`;
+import heroCommunity from "@/assets/hero-community.jpg";
+import richmondAerial from "@/assets/richmond-aerial.jpg";
+import eventCanvass from "@/assets/event-canvass.jpg";
+import eventFestival from "@/assets/event-festival.jpg";
+import eventRally from "@/assets/event-rally.jpg";
+import eventTownhall from "@/assets/event-townhall.jpg";
+import eventVigil from "@/assets/event-vigil.jpg";
+import galleryFamily from "@/assets/gallery-family.jpg";
+import galleryPark from "@/assets/gallery-park.jpg";
 
 export const sourceImages = {
-  // homepage news cards
-  cowichan: G(
-    "AA5AbUAqW8t-CjOUV1rQiNWbv8YT_oul8i0MNCHPfxnlcozjhR58pq-0cP4fZ6opEppgT3BwXZHACh-t-kUH_6V2k_k_Bjd92q26moime2OPOD3_lmUrKhPyc8WmIyyhALRVdLRPhp8fcU5XXq6_uc6t8mLDdVvNQ7BoH5YX258DionLB2OzpOieZYhERbZvi-mj2tbvKuJ6dcu3VNiNxEu2-5674_c7oeugcy8SC_k",
-  ),
-  communityLinks: G(
-    "AA5AbUBPV6gv8FfgX3fG7h6als04rzr-1yS5K-mDsrimkKBKS2nYUK72kZOMb7bPtRIrllw-SuW2ua_OlSXJve9iS2kmpsC2Rh88PpnRdLAeqNGq0kJ-H2ozLgMSvSyJaOnHoGJ56WGInSaWhlmEPgGX3GUV65r1Bb3-3EaIa1M35Uh4GnQMJrmBbdupcsutNoMSW-Sw5jgMxuGBJtn-6zEOvjibe6Mk4iWLlHKk",
-  ),
-  stopCph: G(
-    "AA5AbUDn4qIRQ6Akj7vqE-A94cTmGzDLzNOuBNuBD7aDts4lr7OX-oTAOMARWO0DQCV09Q2S9mFroqIMk9EX9WWkwQhGQdZWxcazdYRYw-Y7csLMPpAcoLpVqPZnTng0fFxP7xYO-LUTXn_mNPKPgOg9c6-w7SgsYXOwveDym4A4PnQ9s2dt5KV4M5DIUKCIF2ysqb19VuhxR8XZlUgg_rDIVAFpLGM_QQMJt4PKvDM",
-  ),
-  familyDayRally: G(
-    "AA5AbUBs-9Om8kxdyC4HdjstCBpNkO2MfPo4Yc71uFCA_5AUeUTRJ4B4l7rEOS2JwUkewz0G1anfN4XFjOqFqThDyasjOzvJGzfuKB7_p2XHhY6iz0NjSSn73wImcVHkUQ1G0cUONS6KHGgnX9sMNPTb2zxJ2onIn0zvSyl07i5n55Ghpwv40IhtE-99-rGLFph3DgHkow0d7p-R5WbJqL1dd7vLhpqE2yCFcXq3",
-  ),
-  // section heroes
-  aboutHero: G(
-    "AA5AbUC80xYDP5jnPCjtP0jTLSeuYLYYWvhtRWutruX7GC5rSkMLEUuTKMFsOwZKmA8oj0-At35h8v3EYjGx8kTBcqosRn8D_a0YRerX_87CCjW4_0pPzK1DMerqPi2VTWs567SOMb-gT46ipe1QmMXjf3F7T9yY-d3pSMUV0E1SBiwTQuPBdp9wzOohMkRXHfQ8L-GQhIJOqA2O9R029I_ZTxrJNvpXTrRzAd_n",
-  ),
-  newsHero: G(
-    "AA5AbUB7tsy31nqZ1UYrzYZ-S9mxz5gkovTc-24EPuy5ObydJK1VTuEu2aGm6d9UT9JTG9qw-tQkBt_rEMjVC8siIy89g4J0OrqH2cmj2bBi5Y9Q8RT9L0zAZvxjuKwPQ-gNy7yvZkJAQWNLO07gyY8pW6HLkIHCK1A5pSi4mawleRWk1UV0YCF1G5YZDa3rouIZq7Cle2-3QGiQalr_wPt-9yH2fUB_Rx0bXb0Q",
-  ),
-  schoolRenaming: G(
-    "AA5AbUBe0W3LabJbF06M5psDD0lLtiDYsu48pM1QdBqWMIh40jvxtiPGXEZHvK20AiHGuHMr6NAYHjyllheo_n_DQbgYYpnxp4t8G8mIDMOghd7Qm3D04nmlHHN5yKBHI_xLZQAgKzOhN2DrJcum2Nk6qg3fM0Pnos-LFEpYynJd8QsRDfxQvg2Np8taXrbtu8h6oRf0lR7SjcIz1nEhp4lJ4oTffWAUOyk33Nxf",
-  ),
+  // homepage news cards / section heroes — local assets (no CDN hot-link)
+  cowichan: eventCanvass,
+  communityLinks: galleryPark,
+  stopCph: eventTownhall,
+  familyDayRally: eventRally,
+  aboutHero: heroCommunity,
+  newsHero: richmondAerial,
+  schoolRenaming: eventVigil,
   // team portraits — uploaded high-resolution headshots
   kevinLai: teamKevinLai,
   samWang: teamSamWang,
@@ -52,15 +42,15 @@ export const images: Record<string, string> = { ...sourceImages };
 
 // Back-compat aliases used by older routes; all point to real source photos.
 export const legacyImageAliases = {
-  heroCommunity: sourceImages.aboutHero,
-  richmondAerial: sourceImages.familyDayRally,
-  eventTownhall: sourceImages.stopCph,
-  eventCanvass: sourceImages.cowichan,
-  eventRally: sourceImages.familyDayRally,
-  eventFestival: sourceImages.communityLinks,
-  eventVigil: sourceImages.schoolRenaming,
-  galleryFamily: sourceImages.familyDayRally,
-  galleryPark: sourceImages.communityLinks,
+  heroCommunity,
+  richmondAerial,
+  eventTownhall,
+  eventCanvass,
+  eventRally,
+  eventFestival,
+  eventVigil,
+  galleryFamily,
+  galleryPark,
 };
 Object.assign(images, legacyImageAliases);
 
