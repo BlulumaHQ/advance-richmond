@@ -41,7 +41,7 @@ function GetInvolvedPage() {
           </p>
         </div>
       </section>
-      <section className="bg-white py-16 md:py-24">
+      <section className="page-bg py-16 md:py-24">
         <div className="container-wide grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {actions.map((a) => {
             const isMail = a.href.startsWith("mailto:");

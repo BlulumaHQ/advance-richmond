@@ -17,7 +17,7 @@ export const Route = createFileRoute("/education-team")({
 
 function EducationPage() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="page-bg page-bg-left py-16 md:py-24">
       <div className="container-wide">
         <p className="eyebrow">Meet the team</p>
         <h1 className="mt-3 font-serif text-4xl text-[color:var(--ink)] md:text-5xl">

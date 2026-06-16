@@ -152,7 +152,7 @@ function Hero() {
 
 function TeamSection() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="page-bg py-20 md:py-28">
       <div className="container-wide">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
@@ -277,7 +277,7 @@ function ImpactSection() {
 function EventsSection() {
   const [featured, ...rest] = featuredEvents;
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="page-bg page-bg-left py-20 md:py-28">
       <div className="container-wide">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
@@ -394,7 +394,7 @@ function GallerySection() {
 
 function NewsSection() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="page-bg page-bg-dual py-20 md:py-28">
       <div className="container-wide">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
