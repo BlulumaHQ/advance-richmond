@@ -9,6 +9,7 @@ import teamSophiaWoo from "@/assets/team-sophia-woo.jpeg";
 import teamPhyllisTang from "@/assets/team-phyllis-tang.jpeg";
 import teamDeanBillings from "@/assets/team-dean-billings.jpeg";
 import teamDannyChang from "@/assets/team-danny-chang.jpeg";
+import teamGaryLaw from "@/assets/team-gary-law.jpeg";
 import heroCommunity from "@/assets/hero-community.jpg";
 import richmondAerial from "@/assets/richmond-aerial.jpg";
 import eventCanvass from "@/assets/event-canvass.jpg";
@@ -35,6 +36,7 @@ export const sourceImages = {
   phyllisTang: teamPhyllisTang,
   deanBillings: teamDeanBillings,
   dannyChang: teamDannyChang,
+  garyLaw: teamGaryLaw,
 };
 
 export const images: Record<string, string> = { ...sourceImages };
@@ -96,6 +98,7 @@ export const team: TeamMember[] = [
     name: "Gary Law",
     role: "Director",
     slug: "gary-law",
+    photo: sourceImages.garyLaw,
     bio: "A founding member of the Advance Richmond Community Association, Gary helped bring together Richmond residents around community safety, transparent local government, and a stronger civic voice.",
     initials: "GL",
   },

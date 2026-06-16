@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import arcaLogo from "@/assets/arca-logo-full.jpeg";
+import arcaLogo from "@/assets/arca-logo-full.png";
 import { navLinks, socialLinks } from "@/lib/site-data";
 
 export function SiteFooter() {

@@ -176,7 +176,7 @@ function TeamSection() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {team.slice(0, 6).map((m) => (
+          {team.map((m) => (
             <TeamCard key={m.name} member={m} />
           ))}
         </div>
