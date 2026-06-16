@@ -27,7 +27,7 @@ function NewsListPage() {
           </h1>
         </div>
       </section>
-      <section className="page-bg py-16 md:py-24">
+      <section className="page-bg page-bg-dual py-16 md:py-24">
         <div className="container-wide">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {news.map((n) => (

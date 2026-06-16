@@ -61,7 +61,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="page-bg py-20 md:py-24">
+      <section className="page-bg page-bg-dual py-20 md:py-24">
         <div className="container-wide grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <p className="eyebrow">Our story</p>
