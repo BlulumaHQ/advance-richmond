@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="border-t border-[color:var(--border)] bg-[#073763] text-white">
       <div className="container-wide grid gap-12 py-14 md:grid-cols-12">
         <div className="md:col-span-5">
-          <div className="inline-flex items-center rounded-lg bg-[#073763] px-4 py-3">
+          <div className="inline-flex items-center rounded-lg bg-[#179DE4] px-4 py-3">
             <img
               src={arcaLogo}
               alt="ARCA — Advance Richmond Community Association"
