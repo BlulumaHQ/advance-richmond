@@ -11,6 +11,8 @@ import teamPhyllisTang from "@/assets/team-phyllis-tang.jpeg";
 import teamDeanBillings from "@/assets/team-dean-billings.jpeg";
 import teamDannyChang from "@/assets/team-danny-chang.jpeg";
 import teamGaryLaw from "@/assets/team-gary-law.jpeg";
+import teamRodBelleza from "@/assets/team-rod-belleza.jpeg";
+import teamWillySinconegue from "@/assets/team-willy-sinconegue.jpeg";
 import heroCommunity from "@/assets/hero-community.jpg";
 import richmondAerial from "@/assets/richmond-aerial.jpg";
 import eventCanvass from "@/assets/event-canvass.jpg";
@@ -38,8 +40,8 @@ export const sourceImages = {
   deanBillings: teamDeanBillings,
   dannyChang: teamDannyChang,
   garyLaw: teamGaryLaw,
-  rodBelleza: undefined as string | undefined,
-  willySinconegue: undefined as string | undefined,
+  rodBelleza: teamRodBelleza,
+  willySinconegue: teamWillySinconegue,
 };
 
 export const images: Record<string, string> = Object.fromEntries(
