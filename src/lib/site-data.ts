@@ -1,7 +1,6 @@
 /**
  * All content below is sourced from https://www.advancerichmond.ca/.
- * Images are served from Google Sites' CDN (lh3.googleusercontent.com),
- * the same host the source site uses.
+ * Images are bundled locally from src/assets/ (no external hot-linking).
  */
 
 import teamKevinLai from "@/assets/team-kevin-lai.jpeg";
