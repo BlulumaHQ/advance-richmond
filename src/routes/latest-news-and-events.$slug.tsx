@@ -50,7 +50,7 @@ function NewsDetail() {
           <ArrowLeft className="h-4 w-4" /> All news &amp; events
         </Link>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-[color:var(--ink)]">
-          {item.body.map((p, i) => (
+          {item.body.map((p: string, i: number) => (
             <p key={i}>{p}</p>
           ))}
         </div>

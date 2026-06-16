@@ -15,6 +15,7 @@ import { Route as EducationTeamRouteImport } from './routes/education-team'
 import { Route as CityCouncilTeamRouteImport } from './routes/city-council-team'
 import { Route as AboutArcaRouteImport } from './routes/about-arca'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LatestNewsAndEventsSlugRouteImport } from './routes/latest-news-and-events.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -46,22 +47,29 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LatestNewsAndEventsSlugRoute = LatestNewsAndEventsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => LatestNewsAndEventsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
-  '/latest-news-and-events': typeof LatestNewsAndEventsRoute
+  '/latest-news-and-events': typeof LatestNewsAndEventsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/latest-news-and-events/$slug': typeof LatestNewsAndEventsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
-  '/latest-news-and-events': typeof LatestNewsAndEventsRoute
+  '/latest-news-and-events': typeof LatestNewsAndEventsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/latest-news-and-events/$slug': typeof LatestNewsAndEventsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,8 +77,9 @@ export interface FileRoutesById {
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
-  '/latest-news-and-events': typeof LatestNewsAndEventsRoute
+  '/latest-news-and-events': typeof LatestNewsAndEventsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/latest-news-and-events/$slug': typeof LatestNewsAndEventsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/education-team'
     | '/latest-news-and-events'
     | '/sitemap.xml'
+    | '/latest-news-and-events/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/education-team'
     | '/latest-news-and-events'
     | '/sitemap.xml'
+    | '/latest-news-and-events/$slug'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/education-team'
     | '/latest-news-and-events'
     | '/sitemap.xml'
+    | '/latest-news-and-events/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -104,7 +116,7 @@ export interface RootRouteChildren {
   AboutArcaRoute: typeof AboutArcaRoute
   CityCouncilTeamRoute: typeof CityCouncilTeamRoute
   EducationTeamRoute: typeof EducationTeamRoute
-  LatestNewsAndEventsRoute: typeof LatestNewsAndEventsRoute
+  LatestNewsAndEventsRoute: typeof LatestNewsAndEventsRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -152,15 +164,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/latest-news-and-events/$slug': {
+      id: '/latest-news-and-events/$slug'
+      path: '/$slug'
+      fullPath: '/latest-news-and-events/$slug'
+      preLoaderRoute: typeof LatestNewsAndEventsSlugRouteImport
+      parentRoute: typeof LatestNewsAndEventsRoute
+    }
   }
 }
+
+interface LatestNewsAndEventsRouteChildren {
+  LatestNewsAndEventsSlugRoute: typeof LatestNewsAndEventsSlugRoute
+}
+
+const LatestNewsAndEventsRouteChildren: LatestNewsAndEventsRouteChildren = {
+  LatestNewsAndEventsSlugRoute: LatestNewsAndEventsSlugRoute,
+}
+
+const LatestNewsAndEventsRouteWithChildren =
+  LatestNewsAndEventsRoute._addFileChildren(LatestNewsAndEventsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutArcaRoute: AboutArcaRoute,
   CityCouncilTeamRoute: CityCouncilTeamRoute,
   EducationTeamRoute: EducationTeamRoute,
-  LatestNewsAndEventsRoute: LatestNewsAndEventsRoute,
+  LatestNewsAndEventsRoute: LatestNewsAndEventsRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
