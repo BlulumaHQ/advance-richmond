@@ -1,8 +1,7 @@
 /**
  * Content sourced from https://www.advancerichmond.ca/.
- * Team headshots (6 directors) bundled locally; Rod, Willy, and source
- * news/about hero images are referenced via the source CDN URL — browsers
- * resolve them correctly even though server-side fetches are blocked.
+ * All images are bundled locally from src/assets for a clean Cloudflare
+ * Workers deployment — no external CDN or Lovable-preview URLs.
  */
 
 import teamKevinLai from "@/assets/team-kevin-lai.jpeg";
@@ -22,36 +21,15 @@ import eventVigil from "@/assets/event-vigil.jpg";
 import galleryFamily from "@/assets/gallery-family.jpg";
 import galleryPark from "@/assets/gallery-park.jpg";
 
-const SRC = {
-  rodBelleza:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUCmuX-p31ZoqInh7srjS-4KBUHS_cOtJVsO9dcTjHnDCgPMSNHQI2nJORK9YQ1iYPMmoH2mZ9KB9hK1wT3pAcxxxc8k448TdbgJxKTeeOiELEWZw6yYWr3nDvHXs6f8AsPHgHE-bpvRAkfRzCU-YWz3IBMboID-2X14KxjxIpj-6FljDqRYVVqYkT7k9pEueYDAjHz1dDh9HyNA_jOddB6P2nYkuXZRk0g7QrQxMVw=w1280",
-  willySinconegue:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUAKS9duSNWQTRTQgWAJpjGvgScFEYyN7P4k1YTWWmFfLlrRgWn-_3rg5gayoEeZ-8F0woRtj2GVMcOrGOFSNcHh46Cc2AJXpKc2W87cU_TPzeuM5dVSzmZHvKJYqdaAL3ZQaGRMLwltK-tz9tJTqYm8wznCk264rUXePOI64YrMxcX4sw-gaWtiQKSor5UWa-_5RdQU0tzx1shg6s47N11O1XrCOkfSKmzdWrGzFkE=w1280",
-  aboutHero:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUCuPXQyAzbSCUfVrKVMWfgYgOxOA3-M9MpNgBLyxrtp2k0rKwGcruSr8aEiQFlN1nlGnevQXBhBteD8PDckIyzLS24h-MlRoM8KWelMj2GSHLQ7586q72mAlIjChO-y3RcJ8GgQoGi2lCdHRfIL3bpgdnXezoN0JVTiotURvhXs4MG8AexUmCSfbpCKy5mRD1SbyfRGvJtBcMP-mooTjcW2rhTKTDCm5bvq90mf=w1280",
-  cowichan:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUAaQHAw4YknYvqXtjIAr8Q1gmgQq0stinsg640ewwdalBhNSheCv199z1_95z3bEYjPv7DACQ3iVHMyPA3TLpQDbrDKnteB8tp9u06qGEx4KEUnQ6-y7-1fVtX6xQdYIZRZSzHKiNktR_4-NvqHTSlDou7phsYh2DEG9w5WsgeqYipNYy3R_jxOALvqR-O6K7sm4RSkCWXD_uzxJLF2oRm-6ZOQgpngQDMR5gADGQ8=w1280",
-  communityLinks:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUA7R1lNuILJx9VTeKfqTgj5FuRQaXtb3GBTaP8IsmKs0FbVd2ppzxOspq-ENUXxmmhKR7V_DFTvMTaClsfQNOP4J-d8wBYhwcbJzb6rl6eob32jeQ8Y7pz9K6YHV5f5kLXnUZY_2EuZ5lDGHssSOYVhiQzX85_uaLZwIOj_fecpjQUvDELXfiuUrgIu4mgQgH6MTcJQ6HlZOEG_bJ6HM1h9Pmc39N1xb3qZOERb=w1280",
-  schoolRenaming:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUB0V-WT7NxXI4ZvDzNVr8JON7zpb-GWgRWM5X2BenKa1kkp4ZIphQezKkU13qE6I8py0R-erd5qj8bUmwdKKmgUsjT987xFm6lAz46IApCIJmRfCBVTmsqujQu8iiCMUg38ps2637JH4uJQELjFoYklL3yKoVJF4fbcTnl64Rm-u_wehLH9nFAR3STdj9NCMIv8iEn9MjK_oj42wSdtI9rM3AqRdrn7DyPsR5qI=w1280",
-  lunarNewYear:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUDr79UcnoBm094Ifr0SS2WgBrbY7NwMFt3pIup5OoCZCYp_OUa0fhVBCZxCHiSnXqkHFy-I4JSTppIDEq6QuerjrYfoSfHdoCZI_ikwYBOVfpWggF9BIDjWfEJ0zE4fxnW_7XqND874q6xZwROYmU-xTB8HlDXIootXjR06POYy4Zo2ocIqyhOGab719ZJxKDiPVm0le6DwrGH3XyhsAC1Emx1Ltm3xnTxm-7LhEYM=w1280",
-  familyDayRally:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUBBUCvxmRynMuD5wf0tSode3VhZBT4JdVk0XV-e8tsXuva7oTst4GSPXtDJOIXWzalFEP1iyrqlVu3VCD-eRUDYeziZ9bJ-G0T-zddWmduOjp2zrlkzim_n5T7JpT3Wa8lCA8qQZ3Vq7jfgJvC4y2DSj1-vzv2HQCqSXQrowaJziZwMW8L5PfVdJqQgQlDcNIFIJ_Nu7Zl_NrvnRBvTQGAcIBclqrHEyYjFlG1T0jY=w1280",
-  newsHero:
-    "https://lh3.googleusercontent.com/sitesv/AA5AbUDirKUb-lBtlHJhCWEA1mBX109Qiwfl0yzMccrqwHnzs5qBIAkVY_sMF5mdE0vO5wGo_6JVGtLBAt6ysupkJO96SCj9IT1upsNhUfqY9tbEt7sSx62Zommhq3-n9tmc6Nt7Elj6XzTkNCK3EO9AVdRYCBEHB6I1RM_3cOw3rM6d7sXZoA4EOWR-yNisDVY_5c2F_J5qyd_JzvXaWzxnsuGTEbwLqTy-B1mgzldT=w1280",
-};
-
 export const sourceImages = {
-  cowichan: SRC.cowichan,
-  communityLinks: SRC.communityLinks,
+  cowichan: eventRally,
+  communityLinks: galleryFamily,
   stopCph: eventTownhall,
-  familyDayRally: SRC.familyDayRally,
-  aboutHero: SRC.aboutHero,
-  newsHero: SRC.newsHero,
-  schoolRenaming: SRC.schoolRenaming,
-  lunarNewYear: SRC.lunarNewYear,
+  familyDayRally: eventRally,
+  aboutHero: heroCommunity,
+  newsHero: richmondAerial,
+  schoolRenaming: eventVigil,
+  lunarNewYear: eventFestival,
   arSocial: eventFestival,
   kevinLai: teamKevinLai,
   samWang: teamSamWang,
@@ -60,11 +38,13 @@ export const sourceImages = {
   deanBillings: teamDeanBillings,
   dannyChang: teamDannyChang,
   garyLaw: teamGaryLaw,
-  rodBelleza: SRC.rodBelleza,
-  willySinconegue: SRC.willySinconegue,
+  rodBelleza: undefined as string | undefined,
+  willySinconegue: undefined as string | undefined,
 };
 
-export const images: Record<string, string> = { ...sourceImages };
+export const images: Record<string, string> = Object.fromEntries(
+  Object.entries(sourceImages).filter(([, v]) => typeof v === "string"),
+) as Record<string, string>;
 
 export const legacyImageAliases = {
   heroCommunity,
