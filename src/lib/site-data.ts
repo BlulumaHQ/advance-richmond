@@ -42,7 +42,9 @@ export const sourceImages = {
   willySinconegue: undefined as string | undefined,
 };
 
-export const images: Record<string, string> = { ...sourceImages };
+export const images: Record<string, string> = Object.fromEntries(
+  Object.entries(sourceImages).filter(([, v]) => typeof v === "string"),
+) as Record<string, string>;
 
 export const legacyImageAliases = {
   heroCommunity,
