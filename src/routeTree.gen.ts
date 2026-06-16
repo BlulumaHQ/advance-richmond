@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LatestNewsAndEventsRouteImport } from './routes/latest-news-and-events'
+import { Route as GetInvolvedRouteImport } from './routes/get-involved'
 import { Route as EducationTeamRouteImport } from './routes/education-team'
 import { Route as CityCouncilTeamRouteImport } from './routes/city-council-team'
 import { Route as AboutArcaRouteImport } from './routes/about-arca'
@@ -25,6 +26,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const LatestNewsAndEventsRoute = LatestNewsAndEventsRouteImport.update({
   id: '/latest-news-and-events',
   path: '/latest-news-and-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetInvolvedRoute = GetInvolvedRouteImport.update({
+  id: '/get-involved',
+  path: '/get-involved',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EducationTeamRoute = EducationTeamRouteImport.update({
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
+  '/get-involved': typeof GetInvolvedRoute
   '/latest-news-and-events': typeof LatestNewsAndEventsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/latest-news-and-events/$slug': typeof LatestNewsAndEventsSlugRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
+  '/get-involved': typeof GetInvolvedRoute
   '/latest-news-and-events': typeof LatestNewsAndEventsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/latest-news-and-events/$slug': typeof LatestNewsAndEventsSlugRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/about-arca': typeof AboutArcaRoute
   '/city-council-team': typeof CityCouncilTeamRoute
   '/education-team': typeof EducationTeamRoute
+  '/get-involved': typeof GetInvolvedRoute
   '/latest-news-and-events': typeof LatestNewsAndEventsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/latest-news-and-events/$slug': typeof LatestNewsAndEventsSlugRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/about-arca'
     | '/city-council-team'
     | '/education-team'
+    | '/get-involved'
     | '/latest-news-and-events'
     | '/sitemap.xml'
     | '/latest-news-and-events/$slug'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/about-arca'
     | '/city-council-team'
     | '/education-team'
+    | '/get-involved'
     | '/latest-news-and-events'
     | '/sitemap.xml'
     | '/latest-news-and-events/$slug'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/about-arca'
     | '/city-council-team'
     | '/education-team'
+    | '/get-involved'
     | '/latest-news-and-events'
     | '/sitemap.xml'
     | '/latest-news-and-events/$slug'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AboutArcaRoute: typeof AboutArcaRoute
   CityCouncilTeamRoute: typeof CityCouncilTeamRoute
   EducationTeamRoute: typeof EducationTeamRoute
+  GetInvolvedRoute: typeof GetInvolvedRoute
   LatestNewsAndEventsRoute: typeof LatestNewsAndEventsRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -134,6 +147,13 @@ declare module '@tanstack/react-router' {
       path: '/latest-news-and-events'
       fullPath: '/latest-news-and-events'
       preLoaderRoute: typeof LatestNewsAndEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-involved': {
+      id: '/get-involved'
+      path: '/get-involved'
+      fullPath: '/get-involved'
+      preLoaderRoute: typeof GetInvolvedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/education-team': {
@@ -190,6 +210,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutArcaRoute: AboutArcaRoute,
   CityCouncilTeamRoute: CityCouncilTeamRoute,
   EducationTeamRoute: EducationTeamRoute,
+  GetInvolvedRoute: GetInvolvedRoute,
   LatestNewsAndEventsRoute: LatestNewsAndEventsRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
