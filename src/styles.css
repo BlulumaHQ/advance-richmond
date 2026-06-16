@@ -67,40 +67,40 @@
   --color-crimson: var(--crimson);
   --color-primary-deep: var(--primary-deep);
   --color-primary-soft: var(--primary-soft);
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.5rem;
-  /* Advance Richmond brand: signature royal blue, deep navy ink, clean paper */
-  --background: oklch(1 0 0);                       /* white paper */
-  --cream: oklch(0.975 0.012 240);                  /* very pale sky tint */
-  --foreground: oklch(0.22 0.05 250);               /* deep navy ink */
-  --ink: oklch(0.20 0.05 250);
-  --ink-soft: oklch(0.40 0.04 250);
+  /* Advance Richmond brand: heron navy, maple-red accent, warm paper */
+  --background: oklch(0.98 0.008 85);               /* warm paper */
+  --cream: oklch(0.94 0.016 84);                    /* paper-2 */
+  --foreground: oklch(0.28 0.028 252);              /* charcoal ink */
+  --ink: oklch(0.28 0.028 252);
+  --ink-soft: oklch(0.47 0.028 248);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.20 0.05 250);
+  --card-foreground: oklch(0.28 0.028 252);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.20 0.05 250);
-  --primary: oklch(0.55 0.18 252);                  /* Advance Richmond blue */
-  --primary-foreground: oklch(1 0 0);
-  --primary-deep: oklch(0.32 0.10 252);             /* deep navy header */
-  --primary-soft: oklch(0.92 0.05 248);             /* pale tinted surface */
-  --secondary: oklch(0.96 0.015 245);
-  --secondary-foreground: oklch(0.22 0.05 250);
-  --muted: oklch(0.96 0.012 245);
-  --muted-foreground: oklch(0.46 0.03 250);
-  --accent: oklch(0.55 0.18 252);                   /* same blue as accent */
-  --gold: oklch(0.78 0.12 78);                      /* small editorial accent */
-  --gold-soft: oklch(0.90 0.07 80);
-  --accent-foreground: oklch(1 0 0);
-  --crimson: oklch(0.50 0.17 25);
-  --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.90 0.015 245);
-  --input: oklch(0.90 0.015 245);
-  --ring: oklch(0.55 0.18 252);
+  --popover-foreground: oklch(0.28 0.028 252);
+  --primary: oklch(0.36 0.066 245);                 /* heron navy */
+  --primary-foreground: oklch(0.98 0.008 85);
+  --primary-deep: oklch(0.27 0.052 248);            /* deep navy */
+  --primary-soft: oklch(0.96 0.008 235);            /* pale sky */
+  --secondary: oklch(0.95 0.012 84);
+  --secondary-foreground: oklch(0.28 0.028 252);
+  --muted: oklch(0.95 0.012 84);
+  --muted-foreground: oklch(0.47 0.028 248);
+  --accent: oklch(0.36 0.066 245);                  /* heron navy */
+  --gold: oklch(0.53 0.175 28);                     /* maple red */
+  --gold-soft: oklch(0.86 0.045 30);                /* soft clay */
+  --accent-foreground: oklch(0.98 0.008 85);
+  --crimson: oklch(0.53 0.175 28);
+  --destructive: oklch(0.53 0.175 28);
+  --destructive-foreground: oklch(0.98 0.008 85);
+  --border: oklch(0.90 0.015 84);
+  --input: oklch(0.90 0.015 84);
+  --ring: oklch(0.36 0.066 245);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
