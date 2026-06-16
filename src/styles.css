@@ -201,4 +201,32 @@
     opacity: 0.4;
     mix-blend-mode: multiply;
   }
+  /* Soft brand wing-shape backdrop. Variants ride on the right, left, or both edges. */
+  .page-bg {
+    position: relative;
+    isolation: isolate;
+  }
+  .page-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: #fbfbfa;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000' preserveAspectRatio='xMidYMid slice'><path d='M740 -40 C 1180 -40 1480 220 1480 500 C 1480 780 1180 1040 740 1040 L 1700 1040 L 1700 -40 Z' fill='%23f1f3f5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+  }
+  .page-bg-left::before {
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000' preserveAspectRatio='xMidYMid slice'><path d='M860 -40 C 420 -40 120 220 120 500 C 120 780 420 1040 860 1040 L -100 1040 L -100 -40 Z' fill='%23f1f3f5'/></svg>");
+    background-position: left center;
+  }
+  .page-bg-dual::before {
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000' preserveAspectRatio='xMidYMid slice'><path d='M740 -40 C 1180 -40 1480 220 1480 500 C 1480 780 1180 1040 740 1040 L 1700 1040 L 1700 -40 Z M 860 1040 C 420 1040 120 780 120 500 C 120 220 420 -40 860 -40 L -100 -40 L -100 1040 Z' fill='%23f1f3f5'/></svg>");
+    background-position: center center;
+  }
 }
