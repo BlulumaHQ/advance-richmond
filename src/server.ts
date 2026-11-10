@@ -66,15 +66,43 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   return brandedErrorResponse();
 }
 
+// Project/preview hostnames that must stay reachable but never be indexed.
+// Custom domains are untouched so they remain index-eligible.
+const NOINDEX_HOST_SUFFIXES = [".lovable.app", ".workers.dev", ".pages.dev", ".netlify.app"];
+
+export function isPlatformHost(hostname: string): boolean {
+  const h = hostname.toLowerCase().replace(/\.$/, "");
+  return NOINDEX_HOST_SUFFIXES.some((s) => h.endsWith(s) || h === s.slice(1));
+}
+
+function withIndexingPolicy(request: Request, response: Response): Response {
+  let hostname = "";
+  try {
+    hostname = new URL(request.url).hostname;
+  } catch {
+    return response;
+  }
+  if (!isPlatformHost(hostname)) return response;
+  const type = response.headers.get("content-type") ?? "";
+  if (!type.includes("text/html")) return response;
+  const headers = new Headers(response.headers);
+  headers.set("X-Robots-Tag", "noindex");
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return withIndexingPolicy(request, await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
-      return brandedErrorResponse();
+      return withIndexingPolicy(request, brandedErrorResponse());
     }
   },
 };
