@@ -91,12 +91,12 @@ export function SiteFooter() {
           <p>
             © 2026 Advance Richmond. All rights reserved. | Web Design by{" "}
             <a
-              href="https://bluluma.com"
+              href="https://sonykundesign.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold underline underline-offset-4 hover:opacity-100"
             >
-              Bluluma
+              Sonykun Design
             </a>
           </p>
           <p className="opacity-80">
